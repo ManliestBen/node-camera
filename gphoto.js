@@ -9,4 +9,7 @@ GPhoto.list(function(list) {
     camera.getConfig(function (er, settings) {
         console.log('Settings', settings.main.children)
     })
+    camera.takePicture({download: true}, function (er, data) {
+        fs.writeFileSync(__dirname + '/picture.jpg', data);
+      });
 })
