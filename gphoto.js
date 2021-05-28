@@ -7,6 +7,6 @@ GPhoto.list(function(list) {
     var camera = list[0]
     console.log('Found', camera.model)
     camera.getConfig(function (er, settings) {
-        console.log('Settings', settings)
+        console.log('Settings', settings.main.children)
     })
 })
